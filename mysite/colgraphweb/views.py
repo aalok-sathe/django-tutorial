@@ -15,14 +15,18 @@ def index(request):
     
     bg = lcg.BaseGraph()
     bg.load_txt('/home/aalok/code/coloring-graphs/in/hexmod.in')
-    cg = bg.build_coloring_graph(4)    
-    mg = cg.tarjans()
+    cg = bg.build_coloring_graph(4)  
+    print(type(cg))  
+    mcg = cg.tarjans()
     
-    data = lcg.viz.to_visjs(mg)
+    data = dict()
+    data.update(lcg.viz.to_visjs(bg))
+    data.update(lcg.viz.to_visjs(cg))
+    data.update(lcg.viz.to_visjs(mcg))
     
     if request.method == 'GET':
         response = HttpResponse(template.render(context=data))
-        print(response.content)
+        # print(response.content)
         return response
         
     return HttpResponse("ERROR")
