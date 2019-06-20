@@ -23,13 +23,25 @@
   <body style="width: 100%; height: 100%;">
 
   <div class="parent grid-parent">
-  {% include "graphcontainer.html" with container_type="bg" %}
-  {% include "graphcontainer.html" with container_type="mcg" %}
+  <!--div class="row"-->
+    <div class="" style="width;">
+      <div>
+        {% include "graphcontainer.html" with container_type="bg" %}
+      </div>
+      <div>
+        {% include "graphcontainer.html" with container_type="mcg" %}
+      </div>
+    </div>
+    <div class="tall">
+      {% include "graphcontainer.html" with container_type="cg" %}
+    </div>
   </div>
-  {% include "graphcontainer.html" with container_type="cg" %}
 
   </body>
 
+  <script type="text/javascript">
+    $('#cgcontainer').height('100%')
+  </script>
   <script src="{% static "colgraphweb.js" %}"></script>
 
 </html>

@@ -14,9 +14,13 @@ def index(request):
     template = loader.get_template('viewtemplate.html')
     
     bg = lcg.BaseGraph()
-    bg.load_txt('/home/aalok/code/coloring-graphs/in/hexmod.in')
+    path = '/home/aalok/code/coloring-graphs/in/hexmod.in'
+    # path = '/home/aalok/code/coloring-graphs/in/bipartite_test_graph0.in'
+    bg.load_txt(path)
+    #mbg = bg.tarjans()
+    
     cg = bg.build_coloring_graph(4)  
-    print(type(cg))  
+    print(type(cg))
     mcg = cg.tarjans()
     
     data = dict()

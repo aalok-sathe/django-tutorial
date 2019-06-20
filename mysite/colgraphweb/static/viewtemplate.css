@@ -31,4 +31,17 @@
 .grid-parent {
   display: grid;
   grid-template-columns: 1fr 1fr
+  grid-template-rows: 1fr 1fr
+}
+
+.tall {
+  grid-row: 0 / 2;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
 }
