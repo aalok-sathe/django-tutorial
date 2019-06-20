@@ -17,7 +17,7 @@ var options = {
     "interaction": {
         "hover": true,
         "dragNodes": true,
-        "hideEdgesOnDrag": false,
+        "hideEdgesOnDrag": true,
         "hideNodesOnDrag": false
     },
     "physics": {
@@ -40,6 +40,8 @@ var options = {
     }
 };
 
+// same options for now
+var bgoptions = mcgoptions = cgoptions = options;
 
 // create a basegraph
 var bgcontainer = document.getElementById('bgcontainer');
@@ -48,7 +50,8 @@ var bgdata = {
     edges: bgedges
 };
 
-var basegraph = new vis.Network(bgcontainer, bgdata, options);
+var basegraph = new vis.Network(bgcontainer, bgdata, bgoptions);
+
 
 // create a coloringgraph
 var cgcontainer = document.getElementById('cgcontainer');
@@ -57,7 +60,8 @@ var cgdata = {
     edges: cgedges
 };
 
-var coloringgraph = new vis.Network(cgcontainer, cgdata, options);
+var coloringgraph = new vis.Network(cgcontainer, cgdata, cgoptions);
+
 
 // create a metagraph
 var mcgcontainer = document.getElementById('mcgcontainer');
@@ -66,4 +70,5 @@ var mcgdata = {
     edges: mcgedges
 };
 
-var metacoloringgraph = new vis.Network(mcgcontainer, mcgdata, options);
+var metacoloringgraph = new vis.Network(mcgcontainer, mcgdata, mcgoptions);
+
